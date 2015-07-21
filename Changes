@@ -818,3 +818,7 @@ later are in the perl-CELL project repo.
 0.210  2015-04-14 09:46 CEST
 - add missing File::Temp build dependency
 
+0.211  2015-07-21 17:56 CEST
+- update copyright statement to include 2015
+- $VERSION only in CELL.pm and Guide.pm
+
