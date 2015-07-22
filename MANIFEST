@@ -20,6 +20,7 @@ lib/App/CELL/Util.pm
 LICENSE
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 META.json
 META.yml
 README
