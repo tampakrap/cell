@@ -822,3 +822,6 @@ later are in the perl-CELL project repo.
 - update copyright statement to include 2015
 - $VERSION only in CELL.pm and Guide.pm
 
+0.212  2015-07-25 05:10 CEST
+- technical release
+
