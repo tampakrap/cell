@@ -25,7 +25,6 @@ META.json
 META.yml
 README
 README.md
-release.sh
 t/000-dependencies.t
 t/001-log.t
 t/002-util.t
