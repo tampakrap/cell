@@ -36,8 +36,8 @@ my $build = Module::Build->new(
     },
     meta_merge => {
         resources => {
-            homepage => 'https://sourceforge.net/projects/perl-cell/',
-            repository => 'https://sourceforge.net/p/perl-cell/code/',
+            repository => 'https://github.com/smithfarm/cell',
+            bugtracker => 'https://github.com/smithfarm/cell/issues',
         }
     },
     add_to_cleanup     => [ 'App-CELL-*' ],
