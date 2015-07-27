@@ -16,8 +16,10 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "File::Spec" : "0",
             "File::Temp" : "0",
-            "Log::Any::Test" : "0"
+            "Log::Any::Test" : "0",
+            "Try::Tiny" : "0"
          }
       },
       "configure" : {
@@ -32,7 +34,6 @@
             "File::HomeDir" : "0",
             "File::Next" : "0",
             "File::ShareDir" : "1.00",
-            "File::Touch" : "0",
             "Log::Any" : "0",
             "Log::Any::Adapter" : "0.1",
             "Try::Tiny" : "0",
@@ -43,14 +44,14 @@
    "provides" : {
       "App::CELL" : {
          "file" : "lib/App/CELL.pm",
-         "version" : "0.212"
+         "version" : "0.213"
       },
       "App::CELL::Config" : {
          "file" : "lib/App/CELL/Config.pm"
       },
       "App::CELL::Guide" : {
          "file" : "lib/App/CELL/Guide.pm",
-         "version" : "0.212"
+         "version" : "0.213"
       },
       "App::CELL::Load" : {
          "file" : "lib/App/CELL/Load.pm"
@@ -76,13 +77,15 @@
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "https://sourceforge.net/projects/perl-cell/",
+      "bugtracker" : {
+         "web" : "https://github.com/smithfarm/cell/issues"
+      },
       "license" : [
          "http://opensource.org/licenses/BSD-3-Clause"
       ],
       "repository" : {
-         "url" : "https://sourceforge.net/p/perl-cell/code/"
+         "url" : "https://github.com/smithfarm/cell"
       }
    },
-   "version" : "0.212"
+   "version" : "0.213"
 }
