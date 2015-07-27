@@ -20,7 +20,9 @@ my $build = Module::Build->new(
     },
     build_requires     => { 
         'Log::Any::Test'     => 0,
+        'File::Spec'         => 0,
         'File::Temp'         => 0,
+        'Try::Tiny'          => 0,
     },
     requires           => {
         'perl'                  => 5.012,
@@ -29,7 +31,6 @@ my $build = Module::Build->new(
         'File::HomeDir'         => 0,
         'File::ShareDir'        => 0,
         'File::Next'            => 0,
-        'File::Touch'           => 0,
         'Log::Any'              => 0,
         'Log::Any::Adapter'     => 0.10,
         'Try::Tiny'             => 0,

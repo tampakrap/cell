@@ -22,7 +22,6 @@ BEGIN {
     use_ok( 'File::HomeDir' );
     use_ok( 'File::Next' );
     use_ok( 'File::ShareDir' );
-    use_ok( 'File::Touch' );
     use_ok( 'Log::Any' );
     use_ok( 'Log::Any::Adapter' );
     use_ok( 'Log::Any::Test' );

@@ -7,7 +7,7 @@ use App::CELL::Log qw( $log );
 use App::CELL::Test;
 use Data::Dumper;
 use File::Spec;
-use File::Touch;
+#use File::Touch;
 use Test::More;
 
 plan tests => 15;

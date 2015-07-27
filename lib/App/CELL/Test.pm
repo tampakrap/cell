@@ -136,6 +136,23 @@ sub cleartmpdir {
 }
 
 
+=head3 _touch
+
+Touch a file
+
+=cut
+
+sub _touch {
+    my ( $file ) = @_;
+    my $now = time;
+    local (*TMP);
+
+    utime ($now, $now, $file)
+                || open (TMP, ">>$file")
+                || warn ("Couldn't touch file: $!\n");
+} 
+
+
 =head2 touch_files
 
 "Touch" some files. Takes: directory path and list of files to "touch" in
@@ -149,11 +166,9 @@ sub touch_files {
 
     my $count = @file_list;
     try {
-        use File::Touch;
-        File::Touch::touch( 
-            map { File::Spec->catfile( $dirspec, $_ ); }
-            @file_list 
-        );
+        foreach my $file ( map { File::Spec->catfile( $dirspec, $_ ); } @file_list ) {
+            _touch( $file );
+        }
     }
     catch {
         my $errmsg = $_;
@@ -182,8 +197,7 @@ sub populate_file {
     my ( $full_path, $contents ) = @_;
     unlink $full_path;
     {
-        use File::Touch;
-        File::Touch::touch( $full_path ) or die "Could not touch $full_path";
+        _touch( $full_path ) or die "Could not touch $full_path";
     }
     return 0 unless -f $full_path and -W $full_path;
     return 0 unless $contents;
