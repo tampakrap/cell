@@ -831,3 +831,7 @@ later are in the perl-CELL project repo.
 0.214  2015-07-27 11:46 CEST
 - technical release
 
+0.215  2015-07-30 10:08 CEST
+- add Params::Validate dependency
+- use Params::Validate in CELL.pm->load() and Load.pm->_conf_from_config
+

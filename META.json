@@ -4,7 +4,7 @@
       "Smithfarm <presnypreklad@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4205",
+   "generated_by" : "Module::Build version 0.4212",
    "license" : [
       "bsd"
    ],
@@ -19,6 +19,7 @@
             "File::Spec" : "0",
             "File::Temp" : "0",
             "Log::Any::Test" : "0",
+            "Params::Validate" : "0",
             "Try::Tiny" : "0"
          }
       },
@@ -36,6 +37,7 @@
             "File::ShareDir" : "1.00",
             "Log::Any" : "0",
             "Log::Any::Adapter" : "0.1",
+            "Params::Validate" : "0",
             "Try::Tiny" : "0",
             "perl" : "5.012"
          }
@@ -44,14 +46,14 @@
    "provides" : {
       "App::CELL" : {
          "file" : "lib/App/CELL.pm",
-         "version" : "0.214"
+         "version" : "0.215"
       },
       "App::CELL::Config" : {
          "file" : "lib/App/CELL/Config.pm"
       },
       "App::CELL::Guide" : {
          "file" : "lib/App/CELL/Guide.pm",
-         "version" : "0.214"
+         "version" : "0.215"
       },
       "App::CELL::Load" : {
          "file" : "lib/App/CELL/Load.pm"
@@ -81,11 +83,11 @@
          "web" : "https://github.com/smithfarm/cell/issues"
       },
       "license" : [
-         "http://opensource.org/licenses/BSD-3-Clause"
+         "http://opensource.org/licenses/bsd-license.php"
       ],
       "repository" : {
          "url" : "https://github.com/smithfarm/cell"
       }
    },
-   "version" : "0.214"
+   "version" : "0.215"
 }
