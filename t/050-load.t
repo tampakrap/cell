@@ -10,6 +10,12 @@ use File::Spec;
 #use File::Touch;
 use Test::More;
 
+#
+# To activate debugging, uncomment the following
+#
+#use App::CELL::Test::LogToFile;
+#$log->init( debug_mode => 1 );
+
 plan tests => 15;
 
 my $status;

@@ -45,6 +45,7 @@ use App::CELL::Util qw( stringify_args is_directory_viable );
 use Data::Dumper;
 use File::Next;
 use File::ShareDir;
+use Params::Validate qw( :all );
 
 =head1 NAME
 
@@ -795,13 +796,19 @@ This was necessary to avoid extreme notational ugliness.
 
 sub _conf_from_config {
     my $self = shift;
+    my ( %ARGS ) = validate( @_, {
+        Dest => { type => HASHREF },
+        Param => { type => SCALAR },
+        Value => { type => SCALAR|SCALARREF|ARRAYREF|HASHREF|CODEREF },
+        File => { type => SCALAR },
+        Line => { type => SCALAR },
+    } );
     # convert PARAMHASH into private variables
-    my ( undef,  $desthash,   # $ARGS{'Dest'}
-         undef,  $param   ,   # $ARGS{'Param'}
-         undef,  $value   ,   # $ARGS{'Value'}
-         undef,  $file    ,   # $ARGS{'File'}
-         undef,  $line    ,   # $ARGS{'Line'}
-       ) = @_;
+    my $desthash = $ARGS{'Dest'};
+    my $param = $ARGS{'Param'};
+    my $value = $ARGS{'Value'};
+    my $file = $ARGS{'File'};
+    my $line = $ARGS{'Line'};
 
     if ( keys( %{ $desthash->{ $param } } ) ) 
     {

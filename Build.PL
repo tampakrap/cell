@@ -22,6 +22,7 @@ my $build = Module::Build->new(
         'Log::Any::Test'     => 0,
         'File::Spec'         => 0,
         'File::Temp'         => 0,
+        'Params::Validate'   => 0,
         'Try::Tiny'          => 0,
     },
     requires           => {
@@ -33,6 +34,7 @@ my $build = Module::Build->new(
         'File::Next'            => 0,
         'Log::Any'              => 0,
         'Log::Any::Adapter'     => 0.10,
+        'Params::Validate'      => 0,
         'Try::Tiny'             => 0,
     },
     meta_merge => {

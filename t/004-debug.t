@@ -20,7 +20,7 @@ use Test::More tests => 4;
 # To activate debugging, uncomment the following
 #
 #use App::CELL::Test::LogToFile;
-$log->init( debug_mode => 1 );
+#$log->init( debug_mode => 1 );
 
 my $status;
 $log->init( ident => 'CELLtest' );

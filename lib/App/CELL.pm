@@ -42,6 +42,7 @@ use App::CELL::Load;
 use App::CELL::Log qw( $log );
 use App::CELL::Status;
 use App::CELL::Util qw( stringify_args utc_timestamp );
+use Params::Validate qw( :all );
 use Scalar::Util qw( blessed );
 
 
@@ -269,13 +270,12 @@ On success, it also sets the C<CELL_META_START_DATETIME> meta parameter.
 =cut
 
 sub load {
-
-    my ( $class, @ARGS ) = @_;
-    if ( @ARGS % 2 ) {
-        return App::CELL->status_err( code => "CELL_ODD_ARGS",
-           args => [ 'App::CELL::load', stringify_args( \@ARGS ) ] );
-    }
-    my %ARGS = @ARGS;
+    my $class = shift;
+    my ( %ARGS ) = validate( @_, {
+        enviro => { type => SCALAR, optional => 1 },
+        sitedir => { type => SCALAR, optional => 1 },
+        verbose => { type => SCALAR, default => 0 },
+    } );
     my $status; 
 
     $log->info( "CELL version $VERSION called from " . (caller)[0] . 

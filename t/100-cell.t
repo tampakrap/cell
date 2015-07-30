@@ -29,7 +29,7 @@ ok( ! $CELL->sitedir, "And sitedir hasn't been loaded, either" );
 
 # first try without pointing to site config directory -- CELL will
 # configure itself from the distro's ShareDir
-$status = $CELL->load( appname => 'CELLfoo' ); 
+$status = $CELL->load(); 
 is( $status->level, "WARN", "Load without sitedir gives warning" );
 is( $CELL->loaded, "SHARE", "\$CELL->loaded says SHARE");
 
