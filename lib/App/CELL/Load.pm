@@ -823,7 +823,7 @@ sub _conf_from_config {
                                     'File'  => $file,
                                     'Line'  => $line,
                                 }; 
-        $log->debug( "Parsed parameter $param with value ->$value<- " .
+        $log->debug( "Parsed parameter $param " .
                     "from $file, line $line", suppress_caller => 1 )
             if $meta->CELL_META_LOAD_VERBOSE;
         return 1;
