@@ -21,12 +21,12 @@ name: App-CELL
 provides:
   App::CELL:
     file: lib/App/CELL.pm
-    version: '0.215'
+    version: '0.216'
   App::CELL::Config:
     file: lib/App/CELL/Config.pm
   App::CELL::Guide:
     file: lib/App/CELL/Guide.pm
-    version: '0.215'
+    version: '0.216'
   App::CELL::Load:
     file: lib/App/CELL/Load.pm
   App::CELL::Log:
@@ -55,4 +55,4 @@ resources:
   bugtracker: https://github.com/smithfarm/cell/issues
   license: http://opensource.org/licenses/bsd-license.php
   repository: https://github.com/smithfarm/cell
-version: '0.215'
+version: '0.216'

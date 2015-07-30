@@ -835,3 +835,9 @@ later are in the perl-CELL project repo.
 - add Params::Validate dependency
 - use Params::Validate in CELL.pm->load() and Load.pm->_conf_from_config
 
+0.216  2016-07-30 16:53 CEST
+- Test.pm: export _touch so other modules can use it, too
+- Load.pm: reporting parameter value in _conf_from_config() is problematic;
+  don't do it
+- Load.pm: allow config params to have undef as value
+

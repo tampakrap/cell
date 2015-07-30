@@ -46,14 +46,14 @@
    "provides" : {
       "App::CELL" : {
          "file" : "lib/App/CELL.pm",
-         "version" : "0.215"
+         "version" : "0.216"
       },
       "App::CELL::Config" : {
          "file" : "lib/App/CELL/Config.pm"
       },
       "App::CELL::Guide" : {
          "file" : "lib/App/CELL/Guide.pm",
-         "version" : "0.215"
+         "version" : "0.216"
       },
       "App::CELL::Load" : {
          "file" : "lib/App/CELL/Load.pm"
@@ -89,5 +89,5 @@
          "url" : "https://github.com/smithfarm/cell"
       }
    },
-   "version" : "0.215"
+   "version" : "0.216"
 }
