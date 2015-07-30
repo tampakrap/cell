@@ -79,7 +79,7 @@ This module exports the following routines:
 
 use Exporter qw( import );
 our @EXPORT_OK = qw( cleartmpdir cmp_arrays mktmpdir populate_file 
-                     touch_files );
+                     touch_files _touch );
 
 
 
