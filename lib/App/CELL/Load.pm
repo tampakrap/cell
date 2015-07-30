@@ -799,7 +799,7 @@ sub _conf_from_config {
     my ( %ARGS ) = validate( @_, {
         Dest => { type => HASHREF },
         Param => { type => SCALAR },
-        Value => { type => SCALAR|SCALARREF|ARRAYREF|HASHREF|CODEREF },
+        Value => { type => SCALAR|SCALARREF|ARRAYREF|HASHREF|CODEREF|UNDEF },
         File => { type => SCALAR },
         Line => { type => SCALAR },
     } );
