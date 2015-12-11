@@ -33,7 +33,7 @@
 package App::CELL::Message;
 
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use 5.012;
 
 use App::CELL::Log qw( $log );

@@ -1,7 +1,7 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use Test::More;
 
 unless ( $ENV{RELEASE_TESTING} ) {

@@ -8,7 +8,7 @@
 
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL::Config qw( $meta $core $site );
 use App::CELL::Load;
 use App::CELL::Log qw( $log );

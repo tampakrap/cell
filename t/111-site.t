@@ -1,7 +1,7 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log $meta $core $site );
 use App::CELL::Test qw( mktmpdir cleartmpdir populate_file );
 #use App::CELL::Test::LogToFile;

@@ -1,7 +1,7 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use Test::More;
 
 BEGIN {
@@ -36,7 +36,7 @@ BEGIN {
     use_ok( 'App::CELL::Status' );
     use_ok( 'App::CELL::Util', qw( utc_timestamp is_directory_viable ) );
     use_ok( 'App::CELL::Test' );
-    use_ok( 'App::CELL::Test::LogToFile' );
+    #use_ok( 'App::CELL::Test::LogToFile' );
 
 }
 
