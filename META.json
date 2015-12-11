@@ -4,7 +4,7 @@
       "Smithfarm <presnypreklad@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4212",
+   "generated_by" : "Module::Build version 0.4205",
    "license" : [
       "bsd"
    ],
@@ -20,6 +20,7 @@
             "File::Temp" : "0",
             "Log::Any::Test" : "0",
             "Params::Validate" : "0",
+            "Test::Warnings" : "0",
             "Try::Tiny" : "0"
          }
       },
@@ -46,14 +47,14 @@
    "provides" : {
       "App::CELL" : {
          "file" : "lib/App/CELL.pm",
-         "version" : "0.216"
+         "version" : "0.217"
       },
       "App::CELL::Config" : {
          "file" : "lib/App/CELL/Config.pm"
       },
       "App::CELL::Guide" : {
          "file" : "lib/App/CELL/Guide.pm",
-         "version" : "0.216"
+         "version" : "0.217"
       },
       "App::CELL::Load" : {
          "file" : "lib/App/CELL/Load.pm"
@@ -89,5 +90,5 @@
          "url" : "https://github.com/smithfarm/cell"
       }
    },
-   "version" : "0.216"
+   "version" : "0.217"
 }
