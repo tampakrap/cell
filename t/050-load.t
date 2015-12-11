@@ -9,14 +9,13 @@ use Data::Dumper;
 use File::Spec;
 #use File::Touch;
 use Test::More;
+use Test::Warnings;
 
 #
 # To activate debugging, uncomment the following
 #
 #use App::CELL::Test::LogToFile;
 #$log->init( debug_mode => 1 );
-
-plan tests => 15;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -125,3 +124,5 @@ is_deeply( $params{ 'TEST_PARAM_2' }->{ 'Value' }, [ 0, 1, 2], "TEST_PARAM_2 has
 is_deeply( $params{ 'TEST_PARAM_3' }->{ 'Value' }, { 'one' => 1, 'two' => 2 }, "TEST_PARAM_3 has the right value" );
 
 #BAIL_OUT("stop here");
+
+done_testing;

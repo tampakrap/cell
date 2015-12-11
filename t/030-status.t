@@ -6,7 +6,8 @@ use App::CELL::Log qw( $log );
 use App::CELL::Status;
 use App::CELL::Test;
 use Data::Dumper;
-use Test::More tests => 50;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -109,3 +110,5 @@ $status = App::CELL::Status->new(
           );
 is( $status->payload, "FOOBARBAZ", "Payload accessor function returns the right value" );
 is( $status->level, "CRIT", "Level accessor function returns the right value" );
+
+done_testing;

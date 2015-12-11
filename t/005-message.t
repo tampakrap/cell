@@ -8,7 +8,8 @@ use App::CELL::Log qw( $log );
 use App::CELL::Message;
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
-use Test::More tests => 14;
+use Test::More;
+use Test::Warnings;
 
 $log->init( ident => 'CELLtest', debug_mode => 1 );
 $log->info("----------------------------------------------- ");
@@ -52,3 +53,5 @@ $message = $status->payload();
 is( $message->text, "Pre-init message w/arg ->CONTENT<-", "Pre-init unknown message codes can contain arguments" );
 $log->debug( $message->text );
 #diag( "Text of " . $message->code . " message is ->" . $message->text . "<-" );
+
+done_testing;

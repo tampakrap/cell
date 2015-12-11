@@ -14,7 +14,8 @@ use App::CELL::Config qw( $site );
 use App::CELL::Load;
 use App::CELL::Log qw( $log );
 use Data::Dumper;
-use Test::More tests => 4;
+use Test::More;
+use Test::Warnings;
 
 #
 # To activate debugging, uncomment the following
@@ -35,3 +36,5 @@ is( $site->CELL_SHAREDIR_LOADED, 1, "CELL_SHAREDIR_LOADED is true after load");
 $status = App::CELL::Status->new( level => 'NOTICE',
                code => 'CELL_TEST_MESSAGE' );
 is( $status->msgobj->text, "This is a test message", "Test message was loaded" );
+
+done_testing;

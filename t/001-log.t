@@ -8,7 +8,8 @@ use App::CELL::Log qw( $log );
 use Log::Any::Test; # BE AWARE THAT App::CELL::Test::LogToFile is 
                     # incompatible with Log::Any::Test !!
 
-use Test::More tests => 17;
+use Test::More;
+use Test::Warnings;
 
 # check environment
 delete $ENV{CELL_DEBUG_MODE};
@@ -62,3 +63,5 @@ $log->contains_only_ok( "baz", "INFO messages log even if debug_mode is off" );
 $log->init( debug_mode => 1 );
 $log->debug("bar");
 $log->contains_only_ok( "bar", "debug_mode back on" );
+
+done_testing;

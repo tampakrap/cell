@@ -3,6 +3,7 @@ use 5.012;
 use strict;
 use warnings;
 use Test::More;
+use Test::Warnings;
 
 BEGIN {
 

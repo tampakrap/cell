@@ -8,8 +8,7 @@ use App::CELL::Status;
 use App::CELL::Util qw( utc_timestamp is_directory_viable );
 use File::Spec;
 use Test::More;
-
-plan tests => 4;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -40,3 +39,5 @@ $status = is_directory_viable( $test_dir );
 ok( ! $status, "Invalid directory is not viable" );
 is( $App::CELL::Util::not_viable_reason, "does not exist", 
     "Invalid directory is not viable for the right reason" );
+
+done_testing;

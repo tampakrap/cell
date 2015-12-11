@@ -15,7 +15,8 @@ use App::CELL::Log qw( $log );
 use App::CELL::Test;
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
-use Test::More tests => 31;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest', debug_mode => 1 );
@@ -123,3 +124,4 @@ $new_result = $site->CELL_SITE_UNIT_TESTING;
 isnt( $new_result, "different baz", "set_site did not change the value" );
 is( $new_result, $result, "the value stayed the same" );
 
+done_testing;

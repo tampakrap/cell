@@ -8,7 +8,8 @@ use App::CELL::Test qw( mktmpdir cleartmpdir populate_file );
 #use Data::Dumper;
 use File::Spec;
 use Scalar::Util qw( blessed );
-use Test::More tests => 27;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 delete $ENV{CELL_DEBUG_MODE};
@@ -144,4 +145,4 @@ is( $site->A_RANDOM_PARAMETER, "34WDFWWD", "Attempt to overwrite existing site p
 is( $meta->CELL_META_SITEDIR_LOADED, 2, "Meta param set correctly after second load");
 is_deeply( $meta->CELL_META_SITEDIR_LIST, [ $sitedir, $sitedir2 ], "List of sitedirs correctly expanded after second load" );
 
-1;
+done_testing;
