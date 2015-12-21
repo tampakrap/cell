@@ -845,3 +845,7 @@ later are in the perl-CELL project repo.
 - global: do not convert warnings into errors
 - tests: use Test::Warnings to test for unexpected warnings
 
+0.218 2015-19-21 16:19 CET
+- Build.PL: do not specify Module::Build build dependency version
+  (fixes OBS build target openSUSE_13.2)
+
