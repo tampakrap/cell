@@ -23,8 +23,7 @@ MANIFEST
 MANIFEST.SKIP
 META.json
 META.yml
-README
-README.md
+README.rst
 t/000-dependencies.t
 t/001-log.t
 t/002-util.t
