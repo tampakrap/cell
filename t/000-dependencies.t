@@ -13,7 +13,6 @@ BEGIN {
     use_ok( 'Exporter', qw( import ) );
     use_ok( 'File::Spec' );
     use_ok( 'File::Temp' );
-    use_ok( 'Module::Build' );
     use_ok( 'Scalar::Util', qw( blessed ) );
     use_ok( 'Storable' );
     use_ok( 'Test::More' );
