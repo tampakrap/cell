@@ -2,7 +2,7 @@
 use 5.012000; # CPAN Testers
 use strict;
 use warnings;
-use Module::Build 0.37;
+use Module::Build;
 
 my $build = Module::Build->new(
     module_name        => 'App::CELL',
@@ -15,7 +15,7 @@ my $build = Module::Build->new(
         dist => [ 'config' ], 
     },
     configure_requires => {
-        'Module::Build'      => 0.37,
+        'Module::Build'      => 0,
         'Software::License'  => 0,
     },
     build_requires     => { 
