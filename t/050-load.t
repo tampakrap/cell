@@ -14,9 +14,7 @@ use Test::More;
 # To activate debugging, uncomment the following
 #
 #use App::CELL::Test::LogToFile;
-#$log->init( debug_mode => 1 );
-
-plan tests => 15;
+$log->init( debug_mode => 1 );
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -98,7 +96,6 @@ App::CELL::Load::parse_message_file( File => $full_path, Dest => \%messages );
 ok( exists $messages{'TEST_MESSAGE'}, "TEST_MESSAGE loaded from file" );
 is( $messages{'TEST_MESSAGE'}->{'en'}->{'Text'}, "OK", "TEST_MESSAGE has the right text");
 
-
 $log->info("*****");
 $log->info("***** TESTING parse_config_file" );
 $return_list = App::CELL::Load::find_files( 'meta', $tmpdir );
@@ -112,16 +109,36 @@ set( 'TEST_PARAM_2', [ 0, 1, 2 ] );
 set( 'TEST_PARAM_3', { 'one' => 1, 'two' => 2 } );
 set( 'TEST_PARAM_1', 'Now is the winter of our discontent' );
 set( 'TEST_PARAM_4', sub { 1; } );
+set( 'UNDEFINED_VALUE', undef );
 1;
 EOS
 App::CELL::Test::populate_file( $full_path, $stuff);
 my %params = ();
 my $count = App::CELL::Load::parse_config_file( File => $full_path, Dest => \%params );
-is( keys( %params ), 4, "Correct number of parameters loaded from file" );
+is( keys( %params ), 5, "Correct number of parameters loaded from file" );
 is( $count, keys( %params ), "Return value matches number of parameters loaded");
 ok( exists $params{ 'TEST_PARAM_1' }, "TEST_PARAM_1 loaded from file" );
 is( $params{ 'TEST_PARAM_1' }->{ 'Value' }, "Fine and dandy", "TEST_PARAM_1 has the right value" );
 is_deeply( $params{ 'TEST_PARAM_2' }->{ 'Value' }, [ 0, 1, 2], "TEST_PARAM_2 has the right value" );
 is_deeply( $params{ 'TEST_PARAM_3' }->{ 'Value' }, { 'one' => 1, 'two' => 2 }, "TEST_PARAM_3 has the right value" );
+is( $params{ 'UNDEFINED_VALUE' }->{ 'Value' }, undef, 'UNDEFINED_VALUE is undef' );
 
-#BAIL_OUT("stop here");
+$log->info("*****");
+$log->info("***** TESTING wrong number of arguments in set" );
+$stuff = <<'EOS';
+# This is a test
+set( 'TEST_PARAM_1', 'Fine and dandy' );
+set( 'TEST_PARAM_2', [ 0, 1, 2 ] );
+set( 'TEST_PARAM_3', { 'one' => 1, 'two' => 2 } );
+set( 'TEST_PARAM_1', 'Now is the winter of our discontent' );
+set( 'TEST_PARAM_4', sub { 1; } );
+set( 'WRONG_NUMBER_OF_ARGUMENTS', 1, 2 );
+1;
+EOS
+$count = App::CELL::Test::populate_file( $full_path, $stuff );
+ok( $count > 0, "$count characters written; greater than zero" );
+%params = ();
+$count = App::CELL::Load::parse_config_file( File => $full_path, Dest => \%params );
+is( $count, 0 ); # FIXME
+
+done_testing;
