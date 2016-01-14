@@ -1,11 +1,12 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log );
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
-use Test::More tests => 12;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -30,3 +31,5 @@ is( $status->code, "foobar", "code is as expected" );
 is( $status->text, "foobar", "text is as expected" );
 is( $status->payload, undef, "payload is undefined" );
 is_deeply( $status->args, [], "args is empty" );
+
+done_testing;

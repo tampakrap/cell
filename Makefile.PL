@@ -1,6 +1,6 @@
 use 5.014001;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use ExtUtils::MakeMaker;
 use File::ShareDir::Install;
 

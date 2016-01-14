@@ -1,7 +1,7 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL::Load;
 use App::CELL::Log qw( $log );
 use App::CELL::Test;
@@ -9,12 +9,13 @@ use Data::Dumper;
 use File::Spec;
 #use File::Touch;
 use Test::More;
+use Test::Warnings;
 
 #
 # To activate debugging, uncomment the following
 #
 #use App::CELL::Test::LogToFile;
-$log->init( debug_mode => 1 );
+#$log->init( debug_mode => 1 );
 
 my $status;
 $log->init( ident => 'CELLtest' );

@@ -1,12 +1,13 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL::Log qw( $log );
 use App::CELL::Status;
 use App::CELL::Test qw( cmp_arrays );
 use File::Spec;
-use Test::More tests => 11;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -47,3 +48,4 @@ ok( $booltrue, "cmp_arrays works on two identical arrays of repeating ones" );
 #$boolfalse = cmp_arrays( [ 1, 1, 1, 1 ], [ 1, 1, 1, 1, 1 ] );
 #is( $boolfalse, 0, "cmp_arrays works on two different arrays of repeating ones" );
 
+done_testing;

@@ -1,7 +1,7 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use Test::More;
 
 # Ensure a recent version of Test::Pod::Coverage
@@ -17,7 +17,6 @@ eval "use Pod::Coverage $min_pc";
 plan skip_all => "Pod::Coverage $min_pc required for testing POD coverage"
     if $@;
 
-plan tests => 10;
 #all_pod_coverage_ok();
 pod_coverage_ok( "App::CELL" );
 pod_coverage_ok( "App::CELL::Config" );
@@ -27,6 +26,7 @@ pod_coverage_ok( "App::CELL::Log" );
 pod_coverage_ok( "App::CELL::Message" );
 pod_coverage_ok( "App::CELL::Status" );
 pod_coverage_ok( "App::CELL::Test" );
-pod_coverage_ok( "App::CELL::Test::LogToFile" );
+#pod_coverage_ok( "App::CELL::Test::LogToFile" );
 pod_coverage_ok( "App::CELL::Util" );
 
+done_testing;

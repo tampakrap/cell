@@ -1,8 +1,9 @@
 #!perl -T
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use Test::More;
+use Test::Warnings;
 
 BEGIN {
 
@@ -12,7 +13,6 @@ BEGIN {
     use_ok( 'Exporter', qw( import ) );
     use_ok( 'File::Spec' );
     use_ok( 'File::Temp' );
-    use_ok( 'Module::Build' );
     use_ok( 'Scalar::Util', qw( blessed ) );
     use_ok( 'Storable' );
     use_ok( 'Test::More' );
@@ -36,7 +36,7 @@ BEGIN {
     use_ok( 'App::CELL::Status' );
     use_ok( 'App::CELL::Util', qw( utc_timestamp is_directory_viable ) );
     use_ok( 'App::CELL::Test' );
-    use_ok( 'App::CELL::Test::LogToFile' );
+    #use_ok( 'App::CELL::Test::LogToFile' );
 
 }
 

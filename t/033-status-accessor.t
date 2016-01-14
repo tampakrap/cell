@@ -1,11 +1,12 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log );
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
-use Test::More tests => 5;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -28,3 +29,5 @@ $status->args( [ 'FOO', 'BAR' ] );
 is( $status->level, 'CRIT' );
 is( $status->code, 'SOMETHING_ELSE' );
 is_deeply( $status->args, [ 'FOO', 'BAR' ] );
+
+done_testing;

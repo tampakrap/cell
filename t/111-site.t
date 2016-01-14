@@ -1,14 +1,15 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log $meta $core $site );
 use App::CELL::Test qw( mktmpdir cleartmpdir populate_file );
 #use App::CELL::Test::LogToFile;
 #use Data::Dumper;
 use File::Spec;
 use Scalar::Util qw( blessed );
-use Test::More tests => 11;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 delete $ENV{CELL_DEBUG_MODE};
@@ -39,3 +40,5 @@ $ENV{'CELL_SITEDIR'} = 'NON-EXISTENT-FOO-BAR-DIRECTORY';
 $status = undef;
 $status = $CELL->load();
 ok( $status->not_ok, "Load without arguments, with CELL_SITEDIR defined to a bad value, returns NOT_OK status" );
+
+done_testing;

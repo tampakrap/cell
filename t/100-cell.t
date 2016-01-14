@@ -1,13 +1,14 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log $meta $core $site );
 use App::CELL::Test qw( cmp_arrays );
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
 use File::ShareDir;
-use Test::More tests => 34;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -99,3 +100,5 @@ ok( $status->payload eq 'bubba' );
 
 $status = $CELL->status_ok( 'CELL_TEST_MESSAGE_WITH_ARGUMENT', args => [ 'very nice' ] );
 is_deeply( $status->args, [ 'very nice' ] );
+
+done_testing;

@@ -1,12 +1,13 @@
 #!perl
 use 5.012;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use App::CELL qw( $CELL $log );
 #use App::CELL::Test::LogToFile;
 use Data::Dumper;
 use Scalar::Util qw( blessed );
-use Test::More tests => 3;
+use Test::More;
+use Test::Warnings;
 
 my $status;
 $log->init( ident => 'CELLtest' );
@@ -25,3 +26,5 @@ ok( blessed $status );
 my $es = $status->expurgate;
 #diag( "Expurgated version: " . Dumper( $es ) );
 ok( ! blessed $es );
+
+done_testing;
