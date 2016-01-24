@@ -10,5 +10,5 @@ perl Build.PL
 ( cd $OBS_DIR ; osc -A https://api.opensuse.org/ up ; osc rm -f $CPAN_NAME-*.tar.gz )
 cp $CPAN_NAME-*.tar.gz $OBS_DIR
 ./Build distclean
-( cd $OBS_DIR ; osc service dr ; osc add $CPAN_NAME-*.tar.gz ; osc -A https://api.opensuse.org/ commit )
+( cd $OBS_DIR ; osc service dr ; osc add $CPAN_NAME-*.tar.gz ; osc -A https://api.opensuse.org/ commit -m $VERSION )
 ( cd $OBS_DIR ; cpan-upload -u SMITHFARM $CPAN_NAME-*.tar.gz )
