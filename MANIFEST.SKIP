@@ -71,5 +71,8 @@
 
 # Avoid archives of this distribution
 \bApp-Dochazka-Common-[\d\.\_]+
+
+# Avoid release script helper files
 \bCPAN_NAME$
-release\.sh$
+\bOBS_PROJECT$
+\bVERSION_MODULE$
