@@ -1,4 +1,2 @@
 ---
 language: perl
-before_install: echo test
-script: prove -lrv t/
