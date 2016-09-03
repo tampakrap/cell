@@ -119,6 +119,7 @@ This module provides the following public methods:
 Construct a status object and trigger a log message if the level is
 anything other than "OK". Always returns a status object. If no level is
 specified, the level will be 'ERR'. If no code is given, the code will be 
+be undefined (I think).
 
 =cut
 
